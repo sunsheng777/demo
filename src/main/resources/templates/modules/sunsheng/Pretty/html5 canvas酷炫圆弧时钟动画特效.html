@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>时钟</title>
+		<style>
+			body{background-color:black;}
+			canvas	{display:		block;}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<script>
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+			ctx.strokeStyle = '#00ffff';//表进度条颜色
+			ctx.lineWidth = 17;//表进度条宽度
+			ctx.shadowBlur = 15;//表中心颜色渐变大小
+			ctx.shadowColor = '#00ffff'
+			function degToRad(degree){
+				var factor = Math.PI / 180;
+				return degree * factor;
+			}
+			function renderTime(){
+				var now = new Date();//创建时间对象
+				var today = now.toDateString();//以字符串形式获取当前时间
+				var time = now.toLocaleTimeString();
+				var hrs = now.getHours();//获取时
+				var min = now.getMinutes();//获取分
+				var sec = now.getSeconds();//获取秒
+				var mil = now.getMilliseconds();//获取毫秒
+				var smoothsec = sec + (mil / 1000);
+				var smoothmin = min + (smoothsec / 60);
+				gradient = ctx.createRadialGradient(250, 250, 5, 250, 250, 300);
+				gradient.addColorStop(0, "#03303a");
+				gradient.addColorStop(1, "black");
+				ctx.fillStyle = gradient;
+				ctx.fillRect(0, 0, 500, 500);
+				ctx.beginPath();
+				ctx.arc(250, 250, 200, degToRad(270), degToRad((hrs * 30) - 90));
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.arc(250, 250, 170, degToRad(270), degToRad((smoothmin * 6) - 90));
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.arc(250, 250, 140, degToRad(270), degToRad((smoothsec * 6) - 90));
+				ctx.stroke();
+				ctx.font = "25px Helvetica";
+				ctx.fillStyle = 'rgba(00, 255, 255, 1)'
+				ctx.fillText(today, 175, 250);
+				ctx.font = "25px Helvetica Bold";
+				ctx.fillStyle = 'rgba(00, 255, 255, 1)';
+				ctx.fillText(time + ":" + mil, 175, 280);
+			}setInterval(renderTime, 10);
+		</script>
+	</body>
+</html>

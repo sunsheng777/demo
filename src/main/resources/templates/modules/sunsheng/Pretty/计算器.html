@@ -1,0 +1,275 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="http://www.softwhy.com/" />
+<meta name="keywords" content="javascript实现的计算机效果代码、JS特效、Jquery特效" />
+<meta name="description" content="javascript实现的计算机效果代码、JS特效、Jquery特效" />
+<title>javascript实现的计算机效果代码-蚂蚁部落</title>
+<style>
+input{
+font-size:14px;
+}
+#jg{
+/* 显示框样式表*/
+FOTN-SIZE:14PX;
+padding:3px;
+border:1px solid #888;
+width:96%;
+text-align:right;}
+
+a:visited,a:link{
+text-decoration:none;
+}
+*{
+margin:0;
+}
+body {
+	background-color: #99CC66;
+}
+table{
+border:2px solid #fff;
+}
+#main{
+/* 包含表格层样式*/
+margin:150px auto 0 auto;
+padding:20px;
+background-color: #999966;
+border-top:1px solid #FFF;
+border-bottom:1px solid #FFF;
+  }
+#copyright{
+font-size:12px;
+color:#555;
+background-color: #CCCC66;
+padding:3px;
+text-align:center;
+border:1px solid #eee;
+}
+
+#description
+{
+ margin:0px auto;
+ width:400px;
+ font-size:14px;
+}
+#softwhy a
+{
+ text-decoration:underline;
+ color:red;
+}
+</style>
+</head>
+
+<body onload="setfocus()">
+<div  id="main">
+
+<table width="230" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#CCCC99" >
+  <tr>
+    <td colspan="5" align="center" ><div style="font-size:14px;color:#333;background-color: #E0CC98;padding:3px;text-align:center;font-weight:bold;border:1px solid #aaa;">计算器</div></td>
+  </tr>
+  <tr>
+    <td colspan="5" >
+
+        <input name="jg" id="jg" type="text"  onKeyup="checkkey()"/>    </td>
+  </tr>
+  <tr><td colspan="2" aling="right"><div id="sjxs" name="sjxs" style="text-align:center;height:20px;width:90px;background-color:#666;color:#fff;"></div></td>
+    <td colspan="2" align="right"><input type="button" name="cls" value="Backspace" onclick="shanchu()" /></td>
+    <td><input type="button" name="qc" id="qc" value="清除" onclick="qc()"/></td></tr>
+  <tr>
+    <td width="37"><input type="button" name="s1" id="s1" value=" 1 " onclick="shu(1)" onkeyup="shu(1)"/></td>
+    <td width="37"><input type="button" name="s2"  id="s2"value=" 2 "  onclick="shu(2)"/></td>
+    <td width="41"><input type="button" name="s2" id="s2" value=" 3 " onclick="shu(3)"/></td>
+    <td width="43"><label>
+    <input type="button" name="jian2" id="jian2" value=" + " onclick='yunsuan(&quot;+&quot;)'/>
+    </label></td>
+    <td width="38">
+<input type="button" name="shijian" id="shijian" value="时间" onclick="timeshow()" /></td>
+  </tr>
+  <tr>
+    <td><input type="button" name="s4" id="s4"value=" 4 " onclick="shu(4)"/></td>
+    <td><input type="button" name="s5" id="s5" value=" 5 " onclick="shu(5)"/></td>
+    <td><input type="button" name="s6" id="s6" value=" 6 " onclick="shu(6)"/></td>
+    <td><input type="button" name="jian3"  id="jian"value=" - " onclick='yunsuan(&quot;-&quot;)' /></td>
+    <td><input type="button" name="pf" id="pf" value="平方" onclick="pf()"/></td>
+  </tr>
+  <tr>
+    <td><input type="button" name="s7" id="s7" value=" 7 " onclick="shu(7)"/></td>
+    <td><input type="button" name="s8" id="s8" value=" 8 " onclick="shu(8)"/></td>
+    <td><input type="button" name="s9" id="s9" value=" 9 " onclick="shu(9)" /></td>
+    <td><input type="button" name="cheng" id="cheng" value=" X " onclick='yunsuan(&quot;x&quot;)'/></td>
+    <td><input type="button" name="kf" id="kf" value="开方" onclick="kf()"/></td>
+  </tr>
+  <tr>
+    <td><input type="button" name="s0" id="s0" value=" 0 " onclick="shu(0)" /></td>
+    <td><input type="button" name="xs" id="xs" value=" . " onclick=shu(".")></td>
+    <td><input type="button" name="deng" id="deng" value=" = " onclick="dengyu()"/></td>
+    <td><input type="button" name="chu"  id="chu" value=" / " onclick='yunsuan(&quot;/&quot;)'/></td>
+    <td>
+      <input type="button" name="jc" value=" n!" onclick="jc()" >    </td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
+<script language="javascript">
+var a,b,c,d;
+function shu(x)
+{
+if (jg.value==0)
+	{
+	jg.value=x;
+	}
+else
+{
+	if (x==".")
+	{
+	var kk=jg.value
+	if (kk.indexOf(".")<0)
+	{jg.value=jg.value+x;}
+	}
+	else
+	{
+	jg.value=jg.value+x;
+	}
+}
+//programing by downyi.com
+}
+function yunsuan(y)
+{
+	switch (y)
+	{
+	case "+":
+	d="+"
+	break
+	case "-":
+	d="-"
+	break
+	case "x":
+	d="x"
+	break
+	case "/":
+	d= "/"
+	}
+a=Number(jg.value);
+jg.value=""
+}
+function dengyu()
+{
+b=Number(jg.value)
+if(a!=undefined && b!=0 && d!=undefined)
+{
+	switch (d)
+	{
+	case "+":
+		c=a+b;
+		break;
+	case "-":
+		c=a-b;
+		break;
+	case "x":
+		c=a*b;
+		break;
+	
+	case "/":
+		c=a/b;
+	}
+jg.value=c;
+a=0;
+b=0;
+d=undefined;
+}
+}
+function qc()
+{
+a=0;
+b=0;
+d=undefined;
+jg.value="0";
+}
+function shanchu()
+{
+var bs=jg.value;
+bs=bs.substr(0,bs.length-1);
+jg.value=bs;
+jg.focus();
+}
+function pf()
+{
+var h=Number(jg.value);
+if (h!=0)
+	{
+	h=h*h;
+	jg.value=h;
+	}
+}
+function jc()
+{
+var p=1;
+var q=parseInt(jg.value)
+if (q!=0 && q!=NaN)
+	{
+	for (i=1;i<=q;i++)
+		{
+		p=p*i;
+		}
+	jg.value=p;
+	}
+
+}
+function setfocus()
+{
+jg.focus();
+ts=startTime()
+}
+function kf()
+{
+if (jg.value!=".")
+{
+jg.value=Math.sqrt(Number(jg.value))
+}
+}
+
+function checkkey()
+{
+var p=/[^0-9]/
+if (p.test(jg.value)==true)
+{
+jg.value=""
+jg.focus
+}
+}
+function startTime()
+{
+var today=new Date()
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+m=checkTime(m)
+s=checkTime(s)
+document.getElementById('sjxs').innerHTML=h+":"+m+":"+s
+t=setTimeout('startTime()',500)
+}
+
+function checkTime(i)
+{
+if (i<10) 
+  {i="0" + i}
+  return i
+}
+function timeshow()
+{
+
+if (document.getElementById('sjxs').style.display!="none")
+{
+document.getElementById('sjxs').style.display="none"
+}
+else
+{
+document.getElementById('sjxs').style.display="block"
+}
+//programing by downyi.com
+}
+
+</script>

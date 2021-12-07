@@ -1,0 +1,240 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/sunsheng/css/base.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/sunsheng/css/jquery.dialog.css}"/>
+    <link rel="stylesheet" th:href="@{/sunsheng/css/index.css}"/>
+    <title>孙升</title>
+</head>
+<body>
+<div id="container">
+    <div id="hd">
+        <div class="hd-wrap ue-clear">
+            <div class="top-light"></div>
+            <h1 class="logo"></h1>
+            <div class="login-info ue-clear">
+                <div class="welcome ue-clear">
+                    <span>欢迎您,</span>
+                    <a href="javascript:void(0)" class="user-name">Admin</a>
+                </div>
+                <div class="login-msg ue-clear">
+                    <a href="javascript:void(0)" class="msg-txt">消息</a>
+                    <a href="javascript:void(0)" class="msg-num">10</a>
+                </div>
+            </div>
+            <div class="toolbar ue-clear">
+                <a href="sunsheng/home.html" class="home-btn" target="right">首页</a>
+                <a href="javascript:void(0)" class="home-btn1" target="right" onclick="openlayer()">修改密码</a>
+                <a href="javascript:void(0)" class="quit-btn exit home-btn">退出</a>
+            </div>
+        </div>
+    </div>
+    <div id="bd">
+        <div class="wrap ue-clear">
+            <div class="sidebar">
+                <h2 class="sidebar-header"><p>功能导航</p></h2>
+                <ul class="nav">
+                    <li class="office current">
+                        <div class="nav-header">
+                            <a href="home.html" target="right" class="ue-clear">
+                                <span>首页</span>
+                                <i class="icon">1</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="land">
+                        <div class="nav-header">
+                            <a href="JavaScript:;" class="ue-clear">
+                                <span>主要</span>
+                                <i class="icon hasChild"></i>
+                            </a>
+                        </div>
+                        <ul class="subnav">
+                            <li><a th:href="@{/Import/one}" target="right">第一个测试页</a></li>
+                            <li><a th:href="@{/Pretty/erciyuan}" target="_blank">二次元动漫</a></li>
+                            <li><a th:href="@{/Pretty/erciyuan2}" target="_blank">二次元动漫2</a></li>
+                            <li><a th:href="@{/Pretty/menhera酱表情包}" target="_blank">menhera酱表情包</a></li>
+                            <li><a th:href="@{/Pretty/高清壁纸}" target="_blank">高清壁纸</a></li>
+                            <li><a th:href="@{/Pretty/每日bing壁纸}" target="_blank">每日 bing 壁纸：</a></li>
+                            <li><a th:href="@{/Pretty/随机淘宝卖家秀}" target="_blank">随机淘宝卖家秀</a></li>
+                            <li><a th:href="@{/Pretty/随机头像}" target="_blank">随机头像</a></li>
+                            <li><a th:href="@{/Pretty/一言语录}" target="_blank">一言语录</a></li>
+                            <li><a th:href="@{/Pretty/舔狗日记}" target="_blank">舔狗日记</a></li>
+                            <li><a th:href="@{/Pretty/随机情话&污话}" target="_blank">随机情话&污话</a></li>
+                            <li><a th:href="@{/Pretty/随机毒鸡汤}" target="_blank">随机毒鸡汤</a></li>
+                            <li><a th:href="@{/Pretty/3D城市}" target="_blank">3D城市</a></li>
+                            <li><a th:href="@{/Pretty/3D旅行}" target="_blank">3D旅行</a></li>
+                            <li><a th:href="@{/Pretty/404滚动框}" target="_blank">404滚动框</a></li>
+                            <li><a th:href="@{/Pretty/打砖块}" target="_blank">打砖块</a></li>
+                            <li><a th:href="@{/Pretty/canvas六角型}" target="_blank">canvas六角型</a></li>
+                            <li><a th:href="@{/Pretty/Canvas加载动画}" target="_blank">Canvas加载动画</a></li>
+                            <li><a th:href="@{/Pretty/canvas喷泉}" target="_blank">canvas喷泉</a></li>
+                            <li><a th:href="@{/Pretty/canvas树}" target="_blank">canvas树</a></li>
+                            <li><a th:href="@{/Pretty/CSS涡旋}" target="_blank">CSS 涡旋</a></li>
+                            <li><a th:href="@{/Pretty/CSS3loadding加载等待效果}" target="_blank">CSS3 loadding加载等待效果</a></li>
+
+                            <li><a th:href="@{/Pretty/css3绘制卡通可爱的小猫动画}" target="_blank">css3绘制卡通可爱的小猫动画</a></li>
+
+                            <li><a th:href="@{/Pretty/canvas酷炫圆弧时钟动画特效}" target="_blank">canvas酷炫圆弧时钟动画特效</a></li>
+
+                            <li><a th:href="@{/Pretty/三角形花圈}" target="_blank">三角形花圈</a></li>
+                            <li><a th:href="@{/Pretty/下雨}" target="_blank">下雨</a></li>
+                            <li><a th:href="@{/Pretty/倒计时}" target="_blank">倒计时</a></li>
+                            <li><a th:href="@{/Pretty/全屏不规则的棱形背景动画}" target="_blank">全屏不规则的棱形背景动画</a></li>
+                            <li><a th:href="@{/Pretty/创意心形动画}" target="_blank">创意心形动画</a></li>
+                            <li><a th:href="@{/Pretty/加载动画}" target="_blank">加载动画</a></li>
+                            <li><a th:href="@{/Pretty/原点动画}" target="_blank">原点动画</a></li>
+                            <li><a th:href="@{/Pretty/大白}" target="_blank">大白</a></li>
+                            <li><a th:href="@{/Pretty/山林里太阳日出日落动画}" target="_blank">山林里太阳日出日落动画</a></li>
+                            <li><a th:href="@{/Pretty/弹性波浪特效}" target="_blank">弹性波浪特效</a></li>
+                            <li><a th:href="@{/Pretty/彩虹蜘蛛}" target="_blank">彩虹蜘蛛</a></li>
+                            <li><a th:href="@{/Pretty/彩虹雨}" target="_blank">彩虹雨</a></li>
+                            <li><a th:href="@{/Pretty/心}" target="_blank">心</a></li></li>
+                            <li><a th:href="@{/Pretty/心1}" target="_blank">心1</a></li>
+                            <li><a th:href="@{/Pretty/情人节快乐}" target="_blank">情人节快乐</a></li>
+                            <li><a th:href="@{/Pretty/抽象的画布花纹动画}" target="_blank">抽象的画布花纹动画</a></li>
+                            <li><a th:href="@{/Pretty/散景效果CSS}" target="_blank">散景效果（CSS）</a></li>
+                            <li><a th:href="@{/Pretty/机器猫}" target="_blank">机器猫</a></li>
+                            <li><a th:href="@{/Pretty/机械手表}" target="_blank">机械手表</a></li>
+                            <li><a th:href="@{/Pretty/格子}" target="_blank">格子</a></li>
+
+                            <li><a th:href="@{/Pretty/模拟声波扩散线性传播}" target="_blank">模拟声波扩散线性传播</a></li>
+
+                            <li><a th:href="@{/Pretty/珠子迷宫}" target="_blank">珠子迷宫</a></li>
+                            <li><a th:href="@{/Pretty/粒子动画}" target="_blank">粒子动画</a></li>
+                            <li><a th:href="@{/Pretty/粒子波浪}" target="_blank">粒子波浪</a></li>
+                            <li><a th:href="@{/Pretty/粒子秘密}" target="_blank">粒子秘密</a></li>
+                            <li><a th:href="@{/Pretty/纯css抽屉}" target="_blank">纯css抽屉</a></li>
+                            <li><a th:href="@{/Pretty/网页特效}" target="_blank">网页特效</a></li>
+                            <li><a th:href="@{/Pretty/花卉}" target="_blank">花卉</a></li>
+                            <li><a th:href="@{/Pretty/计算器}" target="_blank">计算器</a></li>
+                            <li><a th:href="@{/Pretty/跳动的爱心}" target="_blank">跳动的爱心</a></li>
+                            <li><a th:href="@{/Pretty/闪电风暴雨}" target="_blank">闪电风暴雨</a></li>
+                            <li><a th:href="@{/Pretty/黑客帝国}" target="_blank">黑客帝国</a></li>
+                            <li><a th:href="@{/Pretty/黑客帝国界面}" target="_blank">黑客帝国界面</a></li>
+                            <li><a th:href="@{/Pretty/鼠标跟随}" target="_blank">鼠标跟随</a></li>
+
+                            <li><a th:href="@{/Pretty/音频可视化}" target="_blank">音频可视化</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="train">
+                        <div class="nav-header">
+                            <a href="JavaScript:;" class="ue-clear">
+                                <span>天气</span>
+                                <i class="icon hasChild"></i>
+                            </a>
+                        </div>
+                        <ul class="subnav">
+                            <li><a th:href="@{/Pretty/天气}" target="right">天气</a></li>
+                            <li><a th:href="@{/Pretty/gis}" target="_blank">GIS</a></li>
+<!--                            <li><a th:href="http://m.weather.com.cn/mweather40d/index.shtml?101010200}" target="right">天气</a></li>-->
+                            <!--                            <li><a href="train.html" target="right">培训管理</a></li>-->
+                        </ul>
+                    </li>
+
+
+                    <li class="email">
+                        <div class="nav-header">
+                            <a href="JavaScript:;" class="ue-clear">
+                                <span>消息推送</span>
+                                <i class="icon"> </i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="list_m">
+                        <!--                        <div class="nav-header">-->
+                        <!--                            <a href="mailList.html" class="ue-clear" target="right">-->
+                        <!--                                <span>通讯录管理</span>-->
+                        <!--                                <i class="icon"></i>-->
+                        <!--                            </a>-->
+                        <!--                        </div>-->
+                    </li>
+                    <li class="news_m">
+                        <div class="nav-header">
+                            <a href="notice.html" class="ue-clear" target="right">
+                                <span>通知通告</span>
+                                <i class="icon"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="dossier">
+                        <div class="nav-header">
+                            <a href="JavaScript:;" class="ue-clear">
+                                <span>档案管理</span><i class="icon hasChild"></i>
+                            </a>
+                        </div>
+                        <ul class="subnav">
+                            <!--                            <li><a href="dossier_my.html" target="right">个人档案</a></li>-->
+                            <!--                            <li><a href="dossier_puplic.html" target="right">公共档案</a></li>-->
+                        </ul>
+                    </li>
+                    <li class="part">
+                        <div class="nav-header">
+                            <a href="JavaScript:;" class="ue-clear">
+                                <span>系统管理</span><i class="icon hasChild"></i>
+                            </a>
+                        </div>
+                        <ul class="subnav">
+                            <!--                            <li><a href="person.html" target="right">用户管理</a></li>-->
+                            <!--                            <li><a href="part.html" target="right">部门管理</a></li>-->
+                            <!--                            <li><a href="role.html" target="right">角色管理</a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <iframe id="iframe" width="100%" height="100%" frameborder="0" name="right"
+                        style="min-width: 1100px">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div id="ft" class="foot_div">
+        <span>xxxxxx</span>
+        <em>Office&nbsp;System</em>
+        <div class="ft-right">
+            <span>Automation</span>
+            <em>更多模板：<a href="" target="_blank">孙升</a></em>
+        </div>
+    </div>
+</div>
+<div class="exitDialog">
+    <div class="dialog-content">
+        <div class="ui-dialog-icon"></div>
+        <div class="ui-dialog-text">
+            <p class="dialog-content">你确定要退出系统？</p>
+            <p class="tips">如果是请点击“确定”，否则点“取消”</p>
+            <div class="buttons">
+                <input type="button" class="button long2 ok" value="确定"/>
+                <input type="button" class="button long2 normal" value="取消"/>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" th:src="@{../static/sunsheng/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{../static/sunsheng/js/core.js}"></script>
+<script type="text/javascript" th:src="@{../static/sunsheng/js/jquery.dialog.js}"></script>
+<script type="text/javascript" th:src="@{../static/sunsheng/js/index.js}"></script>
+<script type="text/javascript" th:src="@{../static/sunsheng/js/layer_v2.1/layer/layer.js}"></script>
+
+<script type="text/javascript">
+    function openlayer(id) {
+        layer.open({
+            type: 2,
+            title: '修改密码',
+            shadeClose: false,
+            shade: 0.5,
+            skin: 'layui-layer-rim',
+//            maxmin: true,
+            closeBtn: 2,
+            area: ['35%', '40%'],
+            content: 'password.html'
+            //iframe的url
+        });
+    }
+</script>
+</html>

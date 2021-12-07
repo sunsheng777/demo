@@ -1,0 +1,332 @@
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>粒子秘密</title>
+
+<style>
+body {
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  overflow: hidden;
+}
+
+svg {
+  height: 60%;
+  width: 45%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 100%;
+  z-index: 1;
+  opacity: .6;
+  -webkit-animation: rang 15s ease-in-out infinite alternate;
+          animation: rang 15s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes rang{ 
+100% { -webkit-transform: translate(-50%,-50%) 
+  rotateZ(-360deg); transform: translate(-50%,-50%) 
+  rotateZ(-360deg);}
+}
+
+@keyframes rang{ 
+100% { -webkit-transform: translate(-50%,-50%) 
+  rotateZ(-360deg); transform: translate(-50%,-50%) 
+  rotateZ(-360deg);}
+}
+
+canvas {
+  position: absolute;
+  border-radius: 100%;
+  height: 55%;
+  width: 55%;
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+   -webkit-animation: ring 150s ease-in-out infinite alternate;
+           animation: ring 150s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes ring{ 
+100% { -webkit-transform: translate(-50%,-50%) 
+  rotateZ(-360deg); transform: translate(-50%,-50%) 
+  rotateZ(-360deg);}
+}
+
+@keyframes ring{ 
+100% { -webkit-transform: translate(-50%,-50%) 
+  rotateZ(-360deg); transform: translate(-50%,-50%) 
+  rotateZ(-360deg);}
+}
+
+#canv {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: rong 100s ease-in-out infinite ;
+          animation: rong 100s ease-in-out infinite ;
+}
+
+@-webkit-keyframes rong{
+100% { -webkit-transform: translate(-50%,-50%) 
+  rotateZ(80deg); transform: translate(-50%,-50%) 
+  rotateZ(80deg);}
+}
+
+@keyframes rong{
+100% { -webkit-transform: translate(-50%,-50%) 
+  rotateZ(80deg); transform: translate(-50%,-50%) 
+  rotateZ(80deg);}
+}
+
+#r,
+#b,
+#b {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin: -200px 0 0 -200px;
+  z-index: 3;
+}
+
+#r {
+  -webkit-animation: 7s hsla(0, 20%, 50%, .6) linear infinite;
+          animation: 7s hsla(0, 20%, 50%, .6) linear infinite;
+  background-image: radial-gradient(100% 90%, circle contain, rgba(0, 75, 218, .55), rgba(0, 75, 218, 0) 100%);
+
+}
+
+#b {
+  -webkit-animation: hsla(90, 10%, 100%, .2) 5s linear infinite;
+          animation: hsla(90, 10%, 100%, .2) 5s linear infinite;
+  background-image: radial-gradient(50% 50%, circle contain, rgba(90, 173, 223, .45), rgba(90, 173, 223, 0) 100%);
+}
+
+#g {
+  -webkit-animation: hsla(0, 20%, 100%, .2) 1s linear infinite;
+          animation: hsla(0, 20%, 100%, .2) 1s linear infinite;
+  background-image: radial-gradient(50% 50%, circle contain, rgba(180, 222, 12, .5), rgba(180, 222, 12, 0) 100%);
+}
+  
+
+@-webkit-keyframes red {
+  0% {
+    -webkit-transform: rotate(0deg) translate(-40px) rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) translate(-40px) rotate(0deg) scale(1, 1);
+  }
+  50% {
+    -webkit-transform: rotate(-180deg) translate(-40px) rotate(-180deg) scale(-1, 4.33);
+            transform: rotate(-180deg) translate(-40px) rotate(-180deg) scale(-1, 4.33);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg) translate(-40px) rotate(-360deg) scale(1, -10);
+            transform: rotate(-360deg) translate(-40px) rotate(-360deg) scale(1, -10);
+  }
+}
+  
+
+@keyframes red {
+  0% {
+    -webkit-transform: rotate(0deg) translate(-40px) rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) translate(-40px) rotate(0deg) scale(1, 1);
+  }
+  50% {
+    -webkit-transform: rotate(-180deg) translate(-40px) rotate(-180deg) scale(-1, 4.33);
+            transform: rotate(-180deg) translate(-40px) rotate(-180deg) scale(-1, 4.33);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg) translate(-40px) rotate(-360deg) scale(1, -10);
+            transform: rotate(-360deg) translate(-40px) rotate(-360deg) scale(1, -10);
+  }
+}
+
+@-webkit-keyframes green {
+  0% {
+    -webkit-transform: rotate(0deg) translate(30px) rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) translate(30px) rotate(0deg) scale(1, 1);
+    opacity: 1
+  }
+  66% {
+    -webkit-transform: rotate(180deg) translate(30px) rotate(-180deg) scale(1, 1.33);
+            transform: rotate(180deg) translate(30px) rotate(-180deg) scale(1, 1.33);
+    opacity: .33
+  }
+  100% {
+    -webkit-transform: rotate(360deg) translate(30px) rotate(-360deg) scale(1, 1);
+            transform: rotate(360deg) translate(30px) rotate(-360deg) scale(1, 1);
+    opacity: 0
+  }
+}
+
+@keyframes green {
+  0% {
+    -webkit-transform: rotate(0deg) translate(30px) rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) translate(30px) rotate(0deg) scale(1, 1);
+    opacity: 1
+  }
+  66% {
+    -webkit-transform: rotate(180deg) translate(30px) rotate(-180deg) scale(1, 1.33);
+            transform: rotate(180deg) translate(30px) rotate(-180deg) scale(1, 1.33);
+    opacity: .33
+  }
+  100% {
+    -webkit-transform: rotate(360deg) translate(30px) rotate(-360deg) scale(1, 1);
+            transform: rotate(360deg) translate(30px) rotate(-360deg) scale(1, 1);
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes blue {
+  0% {
+    -webkit-transform: rotate(0deg) translate(30px) rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) translate(30px) rotate(0deg) scale(1, 1);
+  }
+  33% {
+    -webkit-transform: rotate(180deg) translate(30px) rotate(-180deg) scale(1.66, 3);
+            transform: rotate(180deg) translate(30px) rotate(-180deg) scale(1.66, 3);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) translate(30px) rotate(-360deg) scale(1, 1);
+            transform: rotate(360deg) translate(30px) rotate(-360deg) scale(1, 1);
+  }
+}
+
+@keyframes blue {
+  0% {
+    -webkit-transform: rotate(0deg) translate(30px) rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) translate(30px) rotate(0deg) scale(1, 1);
+  }
+  33% {
+    -webkit-transform: rotate(180deg) translate(30px) rotate(-180deg) scale(1.66, 3);
+            transform: rotate(180deg) translate(30px) rotate(-180deg) scale(1.66, 3);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) translate(30px) rotate(-360deg) scale(1, 1);
+            transform: rotate(360deg) translate(30px) rotate(-360deg) scale(1, 1);
+  }
+}
+</style>
+
+</head>
+<body>
+
+<div id="r"></div>
+<div id="g"></div>
+<div id="b"></div>
+<canvas id='canv'></canvas>
+<div>
+  <svg viewBox="0 0 200 200">
+    <defs>
+      <radialGradient id="rgA" gradientUnits="userSpaceOnUse" cx1="50" cx2="50" cy1="50" cy2="40" r=".065" spreadMethod="repeat">
+
+
+        <!-- CYAN-->
+        <stop offset=".1" stop-color="hsla(180, 100%, 50%,.8)">
+          <animate id="anim" attributeName="offset" calcMode="ease-in-out" begin="0s" dur="7s" values="0;pow(9,2);pow(99,2)" keitimes="0;0.5;1" repeatCount="1" />
+        </stop>
+        <!-- RED-->
+        <stop offset="0" stop-color="hsla(0, 35%, 50%,1)" stop-opacity=".8">
+          <animate attributeName="offset" calcMode="ease-in-out" begin="7s" dur="7s" values="1;0.1;1" keitimes="0;1;0" repeatCount="1" />
+
+        </stop>
+        <!-- BLUE-->
+        <stop stop-color="hsl(248, 76%, 56%)" stop-opacity=".8">
+          <animate attributeName="offset" calcMode="ease-in-out" begin="14s" dur="7s" values="0;1;2" keitimes="0;1;0" repeatCount="indefinite" />
+        </stop>
+        <!-- PINKPURPLE-->
+        <stop stop-color="hsla(32, 35%, 30%,1)" stop-opacity=".2">
+          <animate attributeName="offset" calcMode="linear" begin="21s" dur="7s" values=".95;.80;.60" keitimes="0;1;0" repeatCount="1" />
+
+        </stop>
+        <!-- IVORY-->
+        <stop offset="0.8" stop-color="hsla(175, 43%, 53%,.9)">
+          <animate attributeName="stop-opacity" calcMode="linear" begin="0s" dur="20s" values="0;1;0" keitimes="0;pow(9,2);1" repeatCount="1" />
+        </stop>
+      </radialGradient>
+      <radialGradient id="rgB" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="80">
+        <stop offset="50%" stop-opacity="0.2" />
+        <stop offset="150%" stop-opacity="0.9" />
+      </radialGradient>
+
+    </defs>
+    <circle id="circ" cx="100" cy="100" r="200" fill="url(#rgA)" />
+    <circle id="circ2" cx="100" cy="100" r="200" fill="url(#rgB)" />
+  </svg>
+</div>
+
+<script>
+var c, $, t;
+t = Math.pow(-9,4);
+c = document.getElementById('canv');
+$ = c.getContext('2d');
+c.width = window.innerWidth;
+c.height = window.innerHeight;
+$.fillStyle = 'hsla(10,60%,10%,1)';
+
+
+window.addEventListener('resize', function() {
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+}, false);
+
+
+function draw() {
+  $.globalCompositeOperation = 'source-over';
+  $.fillStyle = 'hsla(0,0%,0%,.09)';
+  $.fillRect(0, 0, c.width, c.height);
+  var foo, i, j, r;
+  foo = Math.sin(t) * Math.pow(.99,2) * Math.PI;
+  for (i = j = 0; j < 1000; i = ++j) {
+    r = 250 * Math.sin(i * foo);
+    $.globalCompositeOperation = '';
+    $.fillStyle = 'hsla(' + i + 99 + ',100%, 60%,.8)';
+    $.beginPath();
+    $.arc(Math.sin(i) * r + (c.width / 2), 
+          Math.cos(i) * r + (c.height / 2), 
+          1.5, 0, Math.PI / .92);
+    $.fill();
+
+  }
+  t += 0.000005;
+  return t %= 2 * Math.PI;
+
+};
+window.requestAnimFrame = (function() {
+  return window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function(callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+})();
+function run() {
+  window.requestAnimFrame(run);
+  draw();
+}
+run();</script>
+
+</body>
+</html>
+<SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>

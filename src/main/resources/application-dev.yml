@@ -1,0 +1,131 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 60
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+spring:
+  http:
+    multipart:
+      max-file-size: 1024Mb
+      max-request-size: 102400Mb
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+    output:
+      ansi:
+        enable: always
+  jackson:
+    default-property-inclusion: non_null
+    #字符串时间，用这行表示
+    date-format: yyyy-MM-dd HH:mm:ss
+    #设置为东八区时间
+    timezone: GMT+8
+    serialization:
+      #想要值为2019-01-01
+      write-dates-as-timestamps: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.19.130:3306/sunsheng?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    druid:
+      initial-size: 5
+      min-idle: 1
+      max-active: 50
+      max-wait: 3600
+      max-wait-thread-count: 15
+    type: com.alibaba.druid.pool.DruidDataSource
+    #    datasource:
+    #      driver-class-name: ru.yandex.clickhouse.ClickHouseDriver
+    #      url: jdbc:clickhouse://192.168.19.129:8123/default
+    #      username:
+    #      password:
+    #      db: default
+    #      initialSize: 10
+    #      maxActive: 100
+    #      minIdle: 10
+    #      maxWait: 6000
+    clickhouse:
+      address: jdbc:clickhouse://192.168.19.130:8123
+      username: default
+      password:
+      db: system
+      socketTimeout: 600000
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    resources:
+      static-locations: classpath:/static/
+    devtools:
+      restart:
+        enabled: true
+        exclude: static/**,templates/**,assets/**
+  resources:
+    static-locations: classpath:/static/
+  devtools:
+    restart:
+      enabled: true
+      exclude: static/**,templates/**,assets/**
+  output:
+    ansi:
+      enabled: ALWAYS
+  data:
+    mongodb:
+      host: 192.168.19.130
+      post: 27017
+      username: admin
+      password: '123456'
+      authentication-database: admin
+  activemq:
+#    broker-url: tcp://192.168.19.130:8161
+    broker-url: tcp://192.168.19.130:61616
+    user: admin
+    password: 123456
+swagger:
+  enable: true
+elasticsearch:
+  host: localhost
+  # es服务端口
+  port: 9200
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  #  typeAliasesPackage: io.renren.modules.*.entity
+  typeAliasesPackage: com.sunsheng.modules.*
+  #  type-handlers-package: jp.studycompass.admin.common.mybatis.type
+  #  type-handlers-package: com.sunsheng.common.mybatis.type
+  global-config:
+    #    #数据库相关配置
+    #    db-config:
+    #      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+    #      id-type: AUTO
+    #      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+    #      #驼峰下划线转换
+    #      field-strategy: NOT_NULL
+    #      column-underline: true
+    #      logic-delete-value: -1
+    #      logic-not-delete-value: 0
+    banner: false
+      #  #原生配置
+      #  configuration:
+      #    map-underscore-to-camel-case: true
+      #    cache-enabled: false
+      # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+      #    call-setters-on-nulls: true
+    #    jdbc-type-for-null: 'null'
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.baomidou.mybatisplus.samples.quickstart: debug

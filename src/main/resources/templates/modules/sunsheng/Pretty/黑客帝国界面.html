@@ -1,0 +1,53 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>黑客帝国风</title>
+	<style type="text/css">
+		*		{margin: 0;		padding: 0;}/*基本属性*/
+		body	{background:	black;}/*向body中加入一个黑色的背景,显示更清晰*/
+		canvas	{display:		block;}/*canvas画布,将元素显示为块级元素,自带换行符*/
+	</style>
+</head>
+<body>
+	<canvas id="c"></canvas><!--canvas,通过元素显示矩形,id为c-->
+	<script type="text/javascript">
+		var c = document.getElementById("c");//将canvas要显示的矩形赋给c
+		var ctx = c.getContext("2d");//返回一个用于在画布上绘图的环境,(制作全屏画布)唯一合法值是2d
+		c.height = window.innerHeight;//读取系统当前的高度赋给变量c的height,即画布的宽度
+		c.width = window.innerWidth;//读取系统当前的宽度赋给变量c的width,即画布的宽度
+		var chinese = "1010101010";//要显示的文字赋给变量chinese
+		chinese = chinese.split("");//将变量chinese得到的字符串分隔成字符串数组赋给chinese
+		var font_size = 15;//文字大小
+		var columns = c.width / font_size; //columns规定列的宽度和列数,为变量c的宽度除于文字的大小
+		//an array of drops - one per column
+		var drops = [];
+		//x below is the x coordinate
+		//1 = y co-ordinate of the drop(same for every drop initially)
+		for (var x = 0; x < columns; x++)
+			drops[x] = 1;
+		//drawing the characters
+		function draw()
+		{
+			//Black BG for the canvas
+			//translucent BG to show trail
+			ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+			ctx.fillRect(0, 0, c.width, c.height);
+			ctx.fillStyle = "#0F0"; //green text
+			ctx.font = font_size + "px arial";
+			//looping over drops
+			for (var i = 0; i < drops.length; i++)
+			{
+				//a random chinese character to print
+				var text = chinese[Math.floor(Math.random() * chinese.length)];
+				//x = i*font_size, y = value of drops[i]*font_size
+				ctx.fillText(text, i * font_size, drops[i] * font_size);
+				//sending the drop back to the top randomly after it has crossed the screen
+				//adding a randomness to the reset to make the drops scattered on the Y axis
+				if (drops[i] * font_size > c.height && Math.random() > 0.975)
+					drops[i] = 0;
+				//incrementing Y coordinate
+				drops[i]++;
+			}
+		}
+		setInterval(draw, 20);
+	</script>
+</body>
