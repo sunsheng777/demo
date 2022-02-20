@@ -25,10 +25,10 @@
 		$.mockjax({
 			url: "users.action",
 			response: function(settings) {
-				var user = settings.data.username,
+				var clickUserEntity = settings.data.username,
 					users = ["asdf", "Peter", "Peter2", "George"];
 				this.responseText = "true";
-				if ($.inArray(user, users) !== -1) {
+				if ($.inArray(clickUserEntity, users) !== -1) {
 					this.responseText = "false";
 				}
 			},

@@ -1,8 +1,6 @@
-package com.sunsheng.modules.click;
+package com.sunsheng.modules.clickt;
 
 import com.sunsheng.config.ClickHouseConfig;
-import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

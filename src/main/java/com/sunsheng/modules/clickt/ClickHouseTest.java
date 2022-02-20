@@ -1,6 +1,5 @@
-package com.sunsheng.modules.click;
+package com.sunsheng.modules.clickt;
 
-import com.beust.jcommander.internal.Lists;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.yandex.clickhouse.ClickHouseConnection;
@@ -8,9 +7,6 @@ import ru.yandex.clickhouse.ClickHouseDataSource;
 import ru.yandex.clickhouse.ClickHouseStatement;
 import ru.yandex.clickhouse.settings.ClickHouseProperties;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.List;
 @RestController
 @RequestMapping("/click")
 public class ClickHouseTest {
@@ -20,7 +16,7 @@ public class ClickHouseTest {
         props.setUser("");
         props.setPassword("");
         // 不创建数据库的时候会有有个全局default数据库
-        ClickHouseDataSource dataSource = new ClickHouseDataSource("jdbc:clickhouse://192.168.19.129:8123/default", props);
+        ClickHouseDataSource dataSource = new ClickHouseDataSource("jdbc:clickhouse://192.168.19.130:8123/default", props);
         ClickHouseConnection connection = dataSource.getConnection();
         ClickHouseStatement statement = connection.createStatement();
         // 创建一张表，表引擎为Memory，这类表在服务重启后会自动删除

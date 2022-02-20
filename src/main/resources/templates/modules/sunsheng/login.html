@@ -14,7 +14,7 @@
     
     <form method="post">
 		<input name="action" value="login" type="hidden">
-		<input name="username" placeholder="用户名" required="" type="text" id="user">
+		<input name="username" placeholder="用户名" required="" type="text" id="clickUserEntity">
 		<hr class="hr15">
 		<input name="password" placeholder="密码" required="" type="password" id="pass">
 		<hr class="hr15">
@@ -32,12 +32,12 @@
 	$(function(){
 		$("#login_btn").click(function(){
 
-			var selectuser = $("#user").val();
+			var selectuser = $("#clickUserEntity").val();
 			var pword = $("#pass").val();
 
 			if (selectuser == "" || selectuser.length <= 1) {
 				alert("用户名不能为空");
-				$("#user").focus();
+				$("#clickUserEntity").focus();
 				return false;
 			}
 			if (pword == "" || pword.length < 1) {

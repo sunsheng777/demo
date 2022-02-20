@@ -79,6 +79,10 @@ public class HtmlController {
     public String index3() {
         return "modules/sunsheng/Pretty/404滚动框.html";
     }
+    @RequestMapping("/404demo")
+    public String index3demo() {
+        return "modules/sunsheng/Pretty/demo.html";
+    }
 
     @RequestMapping("/打砖块")
     public String indexdzk() {

@@ -1,5 +1,7 @@
 package com.sunsheng.modules.activemq.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sunsheng.common.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
@@ -21,7 +23,11 @@ public class ActiveMQController {
     @GetMapping("/add")
     public R send() {
         String s = UUID.randomUUID().toString().replace("-", "");
-        jmsMessagingTemplate.convertAndSend("msg", s);
+        jmsMessagingTemplate.convertAndSend("msg",
+                JSONObject.toJSONString(s,
+                        SerializerFeature.PrettyFormat,
+                        SerializerFeature.WriteMapNullValue)
+        );
         System.out.println("消息发送成功");
         return R.ok().putData("list", s);
     }
