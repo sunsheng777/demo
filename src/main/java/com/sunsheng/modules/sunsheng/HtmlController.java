@@ -19,23 +19,23 @@ public class HtmlController {
         return new ModelAndView("redirect:https://acg.yanwz.cn/api.php");
     }
 
-    @RequestMapping("/menhera酱表情包")
-    public ModelAndView menhera酱表情包() {
+    @RequestMapping("/menhera")
+    public ModelAndView menhera() {
         return new ModelAndView("redirect:https://acg.yanwz.cn/menhera/api.php");
     }
 
-    @RequestMapping("/高清壁纸")
-    public ModelAndView 高清壁纸() {
+    @RequestMapping("/hdwallpaper")
+    public ModelAndView hdwallpaper() {
         return new ModelAndView("redirect:https://api.ixiaowai.cn/gqapi/gqapi.php");
     }
 
-    @RequestMapping("/每日bing壁纸")
-    public ModelAndView 每日bing壁纸() {
+    @RequestMapping("/dailybingwallpaper")
+    public ModelAndView dailybingwallpaper() {
         return new ModelAndView("redirect:https://api.66mz8.com/api/bing.php?idx=0&format=jpg");
     }
 
-    @RequestMapping("/随机淘宝卖家秀")
-    public ModelAndView 随机淘宝卖家秀() {
+    @RequestMapping("/randomTaobaoSellerShow")
+    public ModelAndView randomTaobaoSellerShow() {
         return new ModelAndView("redirect:https://api.66mz8.com/api/rand.tbimg.php?format=png");
     }
 
@@ -299,14 +299,14 @@ public class HtmlController {
         return "modules/sunsheng/Pretty/鼠标跟随.html";
     }
 
-    @RequestMapping("/音频可视化")
-    public String 音频可视化() {
-        return "modules/sunsheng/Pretty/音频可视化/音频可视化.html";
-    }
+//    @RequestMapping("/音频可视化")
+//    public String 音频可视化() {
+//        return "modules/sunsheng/Pretty/音频可视化/音频可视化.html";
+//    }
 
-    @RequestMapping("/天气")
-    public String 天气() {
-        return "modules/sunsheng/Import/天气.html";
+    @RequestMapping("/weather")
+    public String weather() {
+        return "modules/sunsheng/Import/weather.html";
     }
 
     @RequestMapping("/gis")

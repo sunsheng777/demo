@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-		(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
-@EnableAutoConfiguration
-@ComponentScan(basePackages = {"com.sunsheng.*"})
+//		(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
+//@EnableAutoConfiguration
+//@ComponentScan(basePackages = {"com.sunsheng.*"})
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
