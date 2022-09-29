@@ -1,8 +1,8 @@
-package com.sunsheng.project.controller;
+package com.sunsheng.project.book.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sunsheng.common.utils.R;
-import com.sunsheng.project.service.BookService;
+import com.sunsheng.project.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +24,7 @@ public class BookController {
 //        String url = "https://www.xxsypro.com/api/book/auth/download/v2/chapters";
         SendPost sendPost = new SendPost();
         JSONObject jsonObject = sendPost.post1();
+        System.out.println(jsonObject);
         return R.ok().putData("s", "s");
     }
 }

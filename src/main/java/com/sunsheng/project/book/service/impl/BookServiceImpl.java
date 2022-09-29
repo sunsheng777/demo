@@ -1,9 +1,9 @@
-package com.sunsheng.project.service.impl;
+package com.sunsheng.project.book.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.sunsheng.project.dao.BookMapper;
-import com.sunsheng.project.entity.BookEntity;
-import com.sunsheng.project.service.BookService;
+import com.sunsheng.project.book.dao.BookMapper;
+import com.sunsheng.project.book.entity.BookEntity;
+import com.sunsheng.project.book.service.BookService;
 import org.springframework.stereotype.Service;
 
 /**

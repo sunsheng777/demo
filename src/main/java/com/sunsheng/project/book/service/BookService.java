@@ -1,7 +1,7 @@
-package com.sunsheng.project.service;
+package com.sunsheng.project.book.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.sunsheng.project.entity.BookEntity;
+import com.sunsheng.project.book.entity.BookEntity;
 import org.springframework.stereotype.Service;
 
 /**

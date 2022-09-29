@@ -1,4 +1,4 @@
-package com.sunsheng.project.entity;
+package com.sunsheng.project.book.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
