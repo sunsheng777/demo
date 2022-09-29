@@ -13,10 +13,10 @@ spring:
     multipart:
       max-file-size: 1024Mb
       max-request-size: 102400Mb
-    encoding:
-      force: true
-      charset: UTF-8
-      enabled: true
+#    encoding:
+#      force: true
+#      charset: UTF-8
+#      enabled: true
     output:
       ansi:
         enable: always
@@ -35,6 +35,9 @@ spring:
     url: jdbc:mysql://localhost:3306/sunsheng?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
+#    url: jdbc:mysql://118.190.155.64:3306/shoppe?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: Es@2019
     druid:
       initial-size: 5
       min-idle: 1
@@ -52,12 +55,12 @@ spring:
     #      maxActive: 100
     #      minIdle: 10
     #      maxWait: 6000
-    clickhouse:
-      address: jdbc:clickhouse://192.168.19.130:8123
-      username: default
-      password:
-      db: system
-      socketTimeout: 600000
+#    clickhouse:
+#      address: jdbc:clickhouse://192.168.19.130:8123
+#      username: default
+#      password:
+#      db: system
+#      socketTimeout: 600000
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
@@ -81,18 +84,18 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
-  data:
-    mongodb:
-      host: 192.168.19.130
-      post: 27017
-      username: admin
-      password: '123456'
-      authentication-database: admin
-  activemq:
-#    broker-url: tcp://192.168.19.130:8161
-    broker-url: tcp://192.168.19.130:61616
-    user: admin
-    password: 123456
+#  data:
+#    mongodb:
+#      host: 192.168.19.130
+#      post: 27017
+#      username: admin
+#      password: '123456'
+#      authentication-database: admin
+#  activemq:
+##    broker-url: tcp://192.168.19.130:8161
+#    broker-url: tcp://192.168.19.130:61616
+#    user: admin
+#    password: 123456
 #clickhouse:
 #  driverClassName: ru.yandex.clickhouse.ClickHouseDriver
 #  url: jdbc:clickhouse://192.168.19.130:8123/default
@@ -101,12 +104,12 @@ spring:
 #  maxActive: 100
 #  minIdle: 10
 #  maxWait: 6000
-swagger:
-  enable: true
-elasticsearch:
-  host: localhost
+#swagger:
+#  enable: true
+#elasticsearch:
+#  host: localhost
   # es服务端口
-  port: 9200
+#  port: 9200
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   #实体扫描，多个package用逗号或者分号分隔
