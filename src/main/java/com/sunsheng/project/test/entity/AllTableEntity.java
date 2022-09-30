@@ -6,7 +6,6 @@ import lombok.Data;
 /**
  * @author PC
  */
-@TableName("2023_07")
 @Data
 public class AllTableEntity {
     private String id;

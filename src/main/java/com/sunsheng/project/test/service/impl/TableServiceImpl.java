@@ -6,13 +6,15 @@ import com.sunsheng.project.test.entity.TableEntity;
 import com.sunsheng.project.test.service.TableService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author PC
  */
 @Service
 public class TableServiceImpl extends ServiceImpl<TableMapper, TableEntity> implements TableService {
     @Override
-    public TableEntity getByIdTest() {
+    public List<TableEntity> getByIdTest() {
         return baseMapper.getByIdTest();
     }
 }
