@@ -81,6 +81,12 @@ spring:
     restart:
       enabled: true
       exclude: static/**,templates/**,assets/**
+  rabbitmq:
+    host: 192.168.2.159
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
   output:
     ansi:
       enabled: ALWAYS
