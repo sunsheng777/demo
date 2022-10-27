@@ -23,12 +23,12 @@ public class ProductionAndConsume {
          * 2、routingKey
          * 3、消息内容
          */
-        rabbitTemplate.convertAndSend("exchange_test", "key", "测试消息");
+        rabbitTemplate.convertAndSend("suntest",  "测试消息");
     }
 
     //监听email队列
-    @RabbitListener(queues = "exchange_test")
+    @RabbitListener(queues = "suntest")
     public void testq(Object msg) {
-        System.out.println("exchange_test------->" + msg);
+        System.out.println("suntest------->" + msg);
     }
 }
