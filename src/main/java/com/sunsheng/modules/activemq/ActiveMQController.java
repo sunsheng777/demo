@@ -1,5 +1,5 @@
-//package com.sunsheng.modules.activemq.controller;
-//
+package com.sunsheng.modules.activemq;
+
 //import com.alibaba.fastjson.JSONObject;
 //import com.alibaba.fastjson.serializer.SerializerFeature;
 //import com.sunsheng.common.utils.R;
@@ -14,7 +14,7 @@
 //
 //import java.util.UUID;
 //
-//@RequestM`apping("/active")
+//@RequestMapping("/active")
 //@Controller
 //public class ActiveMQController {
 //    @Autowired
