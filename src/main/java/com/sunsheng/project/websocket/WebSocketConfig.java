@@ -13,7 +13,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     // 设置socket连接
     @Override
     public void registerStompEndpoints(StompEndpointRegistry stompEndpointRegistry) {
-        System.out.println("----test----");
+//        System.out.println("----test----");
         stompEndpointRegistry.addEndpoint("/testSocket")
                 .setAllowedOrigins("*") //解决跨域问题
                 .withSockJS();
