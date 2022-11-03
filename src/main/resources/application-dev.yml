@@ -30,7 +30,6 @@ spring:
       #想要值为2019-01-01
       write-dates-as-timestamps: false
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://192.168.19.130:3306/sunsheng?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     url: jdbc:mysql://localhost:3306/sunsheng?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
@@ -39,24 +38,25 @@ spring:
 #    url: jdbc:mysql://118.190.155.64:3306/shoppe?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
 #    username: root
 #    password: Es@2019
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       initial-size: 5
       min-idle: 1
       max-active: 50
       max-wait: 3600
       max-wait-thread-count: 15
-    clickhouse:
-      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
-      address: jdbc:clickhouse://192.168.2.159:8123
-#      url: jdbc:clickhouse://192.168.2.159:8123
-      username:
-      password:
-      db: default
-      initialSize: 10
-      maxActive: 100
-      minIdle: 10
-      maxWait: 6000
-      socketTimeout: 600000
+#    clickhouse:
+#      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
+#      address: jdbc:clickhouse://192.168.2.159:8123
+##      url: jdbc:clickhouse://192.168.2.159:8123
+#      username:
+#      password:
+#      db: default
+#      initialSize: 10
+#      maxActive: 100
+#      minIdle: 10
+#      maxWait: 6000
+#      socketTimeout: 600000
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
@@ -78,8 +78,8 @@ spring:
       enabled: true
       exclude: static/**,templates/**,assets/**
   rabbitmq:
-    host: 192.168.2.159
-#    host: 192.168.10.130
+#    host: 192.168.2.159
+    host: 192.168.10.130
     port: 5672
     username: guest
     password: guest

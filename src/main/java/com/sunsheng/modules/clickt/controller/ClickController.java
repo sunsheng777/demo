@@ -2,7 +2,7 @@ package com.sunsheng.modules.clickt.controller;
 
 import com.sunsheng.common.utils.DateUtil;
 import com.sunsheng.common.utils.R;
-import com.sunsheng.config.ClickHouseConfig;
+//import com.sunsheng.config.ClickHouseConfig;
 import com.sunsheng.modules.clickt.entity.ClickEntity;
 import com.sunsheng.modules.clickt.service.ClickService;
 import com.sunsheng.project.test.dao.TableMapper;
@@ -27,10 +27,10 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/click")
 public class ClickController {
-    @Resource
-    public ClickService clickService;
+//    @Resource
+//    public ClickService clickService;
 
-    @ResponseBody
+    /*@ResponseBody
     @RequestMapping("/gettest")
     public R gettest() {
 //        Integer id = 1;
@@ -44,14 +44,14 @@ public class ClickController {
         click.setAge(12);
         clickService.saveData(click);
         return R.ok().putData("clickEntity", click);
-    }
+    }*/
 
 
-    @RequestMapping(value = "/addAll")
-    public R exeSql() {
-        String sql = "select * from user";
-        List<Map<String, String>> result = ClickHouseConfig.exeSql(sql);
-        System.out.println(result);
-        return R.ok().putData("result", result);
-    }
+//    @RequestMapping(value = "/addAll")
+//    public R exeSql() {
+//        String sql = "select * from user";
+//        List<Map<String, String>> result = ClickHouseConfig.exeSql(sql);
+//        System.out.println(result);
+//        return R.ok().putData("result", result);
+//    }
 }
