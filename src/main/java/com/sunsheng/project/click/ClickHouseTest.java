@@ -1,4 +1,4 @@
-package com.sunsheng.modules.clickt;
+package com.sunsheng.project.click;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

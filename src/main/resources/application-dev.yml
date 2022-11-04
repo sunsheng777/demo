@@ -45,18 +45,19 @@ spring:
       max-active: 50
       max-wait: 3600
       max-wait-thread-count: 15
-#    clickhouse:
-#      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
+    click:
+      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
 #      address: jdbc:clickhouse://192.168.2.159:8123
-##      url: jdbc:clickhouse://192.168.2.159:8123
-#      username:
-#      password:
-#      db: default
-#      initialSize: 10
-#      maxActive: 100
-#      minIdle: 10
-#      maxWait: 6000
-#      socketTimeout: 600000
+      url: jdbc:clickhouse://192.168.10.130:8123
+#      url: jdbc:clickhouse://192.168.2.159:8123
+      username:
+      password:
+      db: default
+      initialSize: 10
+      maxActive: 100
+      minIdle: 10
+      maxWait: 6000
+      socketTimeout: 6000
   thymeleaf:
     cache: false
     prefix: classpath:/templates/

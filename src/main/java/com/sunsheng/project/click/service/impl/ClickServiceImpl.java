@@ -1,9 +1,9 @@
-package com.sunsheng.modules.clickt.service.impl;
+package com.sunsheng.project.click.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.sunsheng.modules.clickt.dao.ClickMapper;
-import com.sunsheng.modules.clickt.entity.ClickEntity;
-import com.sunsheng.modules.clickt.service.ClickService;
+import com.sunsheng.project.click.dao.ClickMapper;
+import com.sunsheng.project.click.entity.ClickEntity;
+import com.sunsheng.project.click.service.ClickService;
 import org.springframework.stereotype.Service;
 
 /**

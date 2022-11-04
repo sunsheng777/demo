@@ -1,4 +1,4 @@
-package com.sunsheng.modules.clickt.entity;
+package com.sunsheng.project.click.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

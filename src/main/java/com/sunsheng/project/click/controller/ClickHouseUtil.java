@@ -1,20 +1,24 @@
-package com.sunsheng.config;
-
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-import ru.yandex.clickhouse.ClickHouseConnection;
-import ru.yandex.clickhouse.ClickHouseDataSource;
-import ru.yandex.clickhouse.settings.ClickHouseProperties;
-
-import java.sql.*;
-import java.util.*;
-
+//package com.sunsheng.project.clickt.controller;
+//
+//import com.alibaba.fastjson.JSONObject;
+//import lombok.extern.slf4j.Slf4j;
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.stereotype.Component;
+//import ru.yandex.clickhouse.ClickHouseConnection;
+//import ru.yandex.clickhouse.ClickHouseDataSource;
+//import ru.yandex.clickhouse.settings.ClickHouseProperties;
+//
+//import java.sql.*;
+//import java.util.*;
+//
+///**
+// * @Description:
+// * @Date 2018/11/12
+// */
 //@Slf4j
 //@Component
-//@ConfigurationProperties(prefix = "spring.datasource.clickhouse")
-//public class ClickHouseConfig {
+//public class ClickHouseUtil {
+//
 //    private static String clickhouseAddress;
 //
 //    private static String clickhouseUsername;
@@ -27,28 +31,29 @@ import java.util.*;
 //
 //    @Value("${spring.datasource.clickhouse.address}")
 //    public void setClickhouseAddress(String address) {
-//        ClickHouseConfig.clickhouseAddress = address;
+//        ClickHouseUtil.clickhouseAddress = address;
 //    }
 //
 //    @Value("${spring.datasource.clickhouse.username}")
 //    public void setClickhouseUsername(String username) {
-//        ClickHouseConfig.clickhouseUsername = username;
+//        ClickHouseUtil.clickhouseUsername = username;
 //    }
 //
 //    @Value("${spring.datasource.clickhouse.password}")
 //    public void setClickhousePassword(String password) {
-//        ClickHouseConfig.clickhousePassword = password;
+//        ClickHouseUtil.clickhousePassword = password;
 //    }
 //
 //    @Value("${spring.datasource.clickhouse.db}")
 //    public void setClickhouseDB(String db) {
-//        ClickHouseConfig.clickhouseDB = db;
+//        ClickHouseUtil.clickhouseDB = db;
 //    }
 //
 //    @Value("${spring.datasource.clickhouse.socketTimeout}")
 //    public void setClickhouseSocketTimeout(Integer socketTimeout) {
-//        ClickHouseConfig.clickhouseSocketTimeout = socketTimeout;
+//        ClickHouseUtil.clickhouseSocketTimeout = socketTimeout;
 //    }
+//
 //
 //    public static Connection getConn() {
 //
@@ -69,16 +74,16 @@ import java.util.*;
 //        return null;
 //    }
 //
-//    public static List<Map<String, String>> exeSql(String sql) {
+//    public static List<JSONObject> exeSql(String sql) {
 //        log.info("cliockhouse 执行sql：" + sql);
 //        Connection connection = getConn();
 //        try {
 //            Statement statement = connection.createStatement();
 //            ResultSet results = statement.executeQuery(sql);
 //            ResultSetMetaData rsmd = results.getMetaData();
-//            List<Map<String, String>> list = new ArrayList<>();
+//            List<JSONObject> list = new ArrayList();
 //            while (results.next()) {
-//                Map<String, String> row = new HashMap<>();
+//                JSONObject row = new JSONObject();
 //                for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 //                    row.put(rsmd.getColumnName(i), results.getString(rsmd.getColumnName(i)));
 //                }
@@ -91,4 +96,5 @@ import java.util.*;
 //        }
 //        return null;
 //    }
+//
 //}

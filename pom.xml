@@ -224,6 +224,11 @@
             <artifactId>clickhouse-jdbc</artifactId>
             <version>0.1.53</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.housepower</groupId>-->
+<!--            <artifactId>clickhouse-native-jdbc</artifactId>-->
+<!--            <version>1.6-stable</version>-->
+<!--        </dependency>-->
 <!--        acivemq-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

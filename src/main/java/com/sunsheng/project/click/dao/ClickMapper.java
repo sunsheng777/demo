@@ -1,10 +1,9 @@
-package com.sunsheng.modules.clickt.dao;
+package com.sunsheng.project.click.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.sunsheng.modules.clickt.entity.ClickEntity;
+import com.sunsheng.project.click.entity.ClickEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
 /**
  * @author PC
