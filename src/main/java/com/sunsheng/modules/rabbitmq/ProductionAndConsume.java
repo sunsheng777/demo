@@ -18,12 +18,6 @@ public class ProductionAndConsume {
     @ResponseBody
     @RequestMapping("/send")
     public void send() {
-        /**
-         * 参数：
-         * 1、交换机名称
-         * 2、routingKey
-         * 3、消息内容
-         */
         rabbitTemplate.convertAndSend("suntest", "测试消息");
     }
 
@@ -39,12 +33,6 @@ public class ProductionAndConsume {
     @ResponseBody
     @RequestMapping("/send2")
     public void send2() {
-        /**
-         * 参数：
-         * 1、交换机名称
-         * 2、routingKey
-         * 3、消息内容
-         */
         rabbitTemplate.convertAndSend("logs", "", "测试群发消息");
     }
 
@@ -68,26 +56,7 @@ public class ProductionAndConsume {
     public void suntest2(String msg) {
         System.out.println("suntest2------->" + msg);
     }
-//    -------------------------路由模式-------------------------
 
-    @ResponseBody
-    @RequestMapping("/send3")
-    public void send3() {
-        //路由模式
-        rabbitTemplate.convertAndSend("directs", "info", "发送info的key的路由的信息");
-    }
-
-    @RabbitListener(bindings = {
-            @QueueBinding(
-                    value = @Queue,//创建临时队列
-                    exchange = @Exchange(value = "directs", type = "directs"),//指定交换机和路由
-                    key = {"info","error","warn"}
-            )}
-    )
-    @RabbitHandler
-    public void directs(String msg) {
-        System.out.println("路由模式------->" + msg);
-    }
 
     //    -------------------------动态路由，订阅模式-------------------------
 
