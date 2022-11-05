@@ -1,34 +1,5 @@
-server:
-  port: 8080
-  servlet:
-    session:
-      timeout: 60
-    context-path: /
-  tomcat:
-    uri-encoding: UTF-8
-    max-threads: 1000
-    min-spare-threads: 30
+
 spring:
-  http:
-#    multipart:
-#      max-file-size: 1024Mb
-#      max-request-size: 102400Mb
-#    encoding:
-#      force: true
-#      charset: UTF-8
-#      enabled: true
-    output:
-      ansi:
-        enable: always
-  jackson:
-    default-property-inclusion: non_null
-    #字符串时间，用这行表示
-    date-format: yyyy-MM-dd HH:mm:ss
-    #设置为东八区时间
-    timezone: GMT+8
-    serialization:
-      #想要值为2019-01-01
-      write-dates-as-timestamps: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://192.168.19.130:3306/sunsheng?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
@@ -45,49 +16,14 @@ spring:
       max-active: 50
       max-wait: 3600
       max-wait-thread-count: 15
-    click:
-      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
-#      address: jdbc:clickhouse://192.168.2.159:8123
-      url: jdbc:clickhouse://192.168.10.130:8123
-#      url: jdbc:clickhouse://192.168.2.159:8123
-      username:
-      password:
-      db: default
-      initialSize: 10
-      maxActive: 100
-      minIdle: 10
-      maxWait: 6000
-      socketTimeout: 6000
-  thymeleaf:
-    cache: false
-    prefix: classpath:/templates/
-    suffix: .html
-    mode: HTML
-    encoding: UTF-8
-    servlet:
-      content-type: text/html
-#    resources:
-#      static-locations: classpath:/static/
-#    devtools:
-#      restart:
-#        enabled: true
-#        exclude: static/**,templates/**,assets/**
-  resources:
-    static-locations: classpath:/static/
-  devtools:
-    restart:
-      enabled: true
-      exclude: static/**,templates/**,assets/**
-  rabbitmq:
-#    host: 192.168.2.159
-    host: 192.168.10.130
-    port: 5672
-    username: guest
-    password: guest
-    virtualHost: /
-  output:
-    ansi:
-      enabled: ALWAYS
+#  rabbitmq:
+##    host: 192.168.2.159
+#    host: 192.168.10.130
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtualHost: /
+
 #  data:
 #    mongodb:
 #      host: 192.168.19.130
@@ -135,6 +71,3 @@ mybatis-plus:
     # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-logging:
-  level:
-    com.baomidou.mybatisplus.samples.quickstart: debug

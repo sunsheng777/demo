@@ -1,42 +1,56 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 60
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
 spring:
   profiles:
     active: dev
-
-  #spring:
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-##    url: jdbc:mysql://47.105.144.39:3306/shoppe
-##    username: root
-##    password: 123456
-#    url: jdbc:mysql://118.190.155.64:3306/shoppe
-#    username: root
-#    password: Es@2019
-#    druid:
-#      initial-size: 5
-#      min-idle: 1
-#      max-active: 50
-#      max-wait: 3600
-#      max-wait-thread-count: 15
-
-#  rabbitmq:
-#    host: 123.56.92.145
-#    port: 15672
-#    username: admin
-#    password: admin
-#    publisher-confirms: true
-#    publisher-returns: true
-#    connection-timeout: 20000
-#  redis:
-#    port: 6379
-#    password:
-#    host: 123.56.92.145
-#    jedis:
-#      pool:
-#        max-idle: 8
-#        max-active: 8
-#        min-idle: 2
-#    timeout: 2000
-#  data:
-#    mongodb:
-#      uri: mongodb://123.56.92.145:27017/sun
-
+  http:
+    multipart:
+      max-file-size: 1024Mb
+      max-request-size: 102400Mb
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+  jackson:
+    default-property-inclusion: non_null
+    #字符串时间，用这行表示
+    date-format: yyyy-MM-dd HH:mm:ss
+    #设置为东八区时间
+    timezone: GMT+8
+    serialization:
+      #想要值为2019-01-01
+      write-dates-as-timestamps: false
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+      resources:
+        static-locations: classpath:/static/
+      devtools:
+        restart:
+          enabled: true
+          exclude: static/**,templates/**,assets/**
+  resources:
+    static-locations: classpath:/static/
+  devtools:
+    restart:
+      enabled: true
+      exclude: static/**,templates/**,assets/**
+  output:
+    ansi:
+      enabled: ALWAYS
+logging:
+  level:
+    com.baomidou.mybatisplus.samples.quickstart: debug
