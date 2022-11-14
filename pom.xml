@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.6.RELEASE</version>
+        <version>2.7.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sunsheng</groupId>
@@ -83,19 +83,6 @@
         <!--            <version>3.1.1</version>-->
         <!--        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
@@ -108,17 +95,17 @@
             <version>1.2.78</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.hyperic.sigar/com.springsource.org.hyperic.sigar -->
-<!--        <dependency>-->
-<!--            <groupId>org.hyperic.sigar</groupId>-->
-<!--            <artifactId>com.springsource.org.hyperic.sigar</artifactId>-->
-<!--            <version>1.6.3</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.hyperic.sigar</groupId>
+            <artifactId>com.springsource.org.hyperic.sigar</artifactId>
+            <version>1.6.3</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.webjars.npm/jsonwebtoken -->
-        <!--		<dependency>-->
-        <!--			<groupId>org.webjars.npm</groupId>-->
-        <!--			<artifactId>jsonwebtoken</artifactId>-->
-        <!--			<version>8.5.1</version>-->
-        <!--		</dependency>-->
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>jsonwebtoken</artifactId>
+            <version>8.5.1</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -165,7 +152,7 @@
         <dependency>
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
-            <version>8.0.3</version>
+            <version>8.4.3</version>
         </dependency>
 
         <!--		es-->

@@ -1,6 +1,5 @@
 package com.sunsheng.modules.sunsheng;
 
-import cn.hutool.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -312,5 +311,10 @@ public class HtmlController {
     @RequestMapping("/gis")
     public String gis() {
         return "modules/sunsheng/Import/gis.html";
+    }
+
+    @RequestMapping("/minio")
+    public String minio() {
+        return "modules/minio/Minio.html";
     }
 }

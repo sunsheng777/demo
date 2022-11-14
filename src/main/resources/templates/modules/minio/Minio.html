@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>minio</title>
+    <th:block th:include="base::base-header"/>
+    <style>
+        .td{
+            border: #0000FF 2px solid;
+        }
+    </style>
+</head>
+<body>
+<div id="vvm">
+    <h2 id="nowtime">--</h2>
+    <table id="tabletext" style="border: #0000FF 2px solid">
+        <tr>
+            <td class="td">编号</td>
+            <td class="td">名字</td>
+            <td class="td">密码</td>
+        </tr>
+    </table>
+    <a id="onelidt"></a>
+</div>
+<script th:src="@{/js/modules/minio/Minio.js}"></script>
+</body>
+</html>

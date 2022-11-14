@@ -27,15 +27,15 @@ spring:
 #      max-active: 50
 #      max-wait: 3600
 #      max-wait-thread-count: 15
-    click:
-      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
-      url: jdbc:clickhouse://192.168.2.159:8123/default
-      username:
-      password:
-      initialSize: 10
-      maxActive: 100
-      minIdle: 10
-      maxWait: 6000
+#    click:
+#      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
+#      url: jdbc:clickhouse://192.168.2.159:8123/default
+#      username:
+#      password:
+#      initialSize: 10
+#      maxActive: 100
+#      minIdle: 10
+#      maxWait: 6000
 #  rabbitmq:
 ##    host: 192.168.2.159
 #    host: 192.168.10.130
@@ -62,6 +62,11 @@ spring:
 #  host: localhost
   # es服务端口
 #  port: 9200
+minio:
+  endpoint: http://192.168.174.128:9000/
+  bucketName: test
+  accessKey: admin
+  secretKey: admin123
 mybatis-plus:
 #  mapper-locations: classpath*:com/sunsheng/modules/**/*.xml,classpath*:com/sunsheng/project/**/xml/*.xml,classpath*:com/sunsheng/**/xml/*.xml
   mapper-locations: classpath*:com/sunsheng/**/**/*.xml
